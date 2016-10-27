@@ -57,8 +57,12 @@ import base64
 import json
 import sys
 
+import urllib2 as urllib
+import io
 
-def main(input_file, output_filename):
+
+
+def main(input_file):
     """Translates the input file into a json output file.
 
     Args:
@@ -72,10 +76,18 @@ def main(input_file, output_filename):
         image_filename, features = line.lstrip().split(' ', 1)
 
         # First, get the image data
+        '''
         with open(image_filename, 'rb') as image_file:
             content_json_obj = {
                 'content': base64.b64encode(image_file.read()).decode('UTF-8')
-            }
+            }'''
+
+        fd = urllib.urlopen(image_filename)
+        image_file = io.BytesIO(fd.read())
+        #im = Image.open(image_file)
+        content_json_obj = {
+            'content': base64.b64encode(image_file.read()).decode('UTF-8')
+        }
 
         # Then parse out all the features we want to compute on this image
         feature_json_obj = []
@@ -92,10 +104,13 @@ def main(input_file, output_filename):
             'image': content_json_obj,
         })
 
+    return json.dumps({'requests': request_list})
+
+'''    
     # Write the object to a file, as json
     with open(output_filename, 'w') as output_file:
         json.dump({'requests': request_list}, output_file)
-
+'''
 
 DETECTION_TYPES = [
     'TYPE_UNSPECIFIED',

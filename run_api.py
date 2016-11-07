@@ -1,11 +1,30 @@
 import requests
 import generatejson
+import json
+import time
 
 with open("input.txt", 'r') as input_file:
-    data = generatejson.main(input_file)
 
-    response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=AIzaSyCcczu2Kj2NvCkiRsWTZO_qbsgolfx9gCk',
-    data=data,
-    headers={'Content-Type': 'application/json'})
+    out = ""
+    for i,line in enumerate(input_file):
 
-    print response.text
+        data = generatejson.main(line)
+
+        '''    response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=AIzaSyCcczu2Kj2NvCkiRsWTZO_qbsgolfx9gCk','''
+        
+        response = requests.post(url='https://vision.googleapis.com/v1/images:annotate?key=AIzaSyBBpVtsrJ2HPE9KKEwZyTrmwI-pPSBXtYA',
+
+        data=data[0],
+        headers={'Content-Type': 'application/json'})
+
+        if i%10==0:
+            print i
+        
+        #print json.dumps(json.loads(response.text))
+        out += json.dumps(json.loads(response.text))+"\t"+data[1]+"\n"
+        time.sleep(0.01) # delays for 5 seconds
+
+
+    with open("pittsburgh_vision.txt", "w") as text_file:
+        text_file.write(out)
+

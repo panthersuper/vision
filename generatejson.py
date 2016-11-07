@@ -62,7 +62,7 @@ import io
 
 
 
-def main(input_file):
+def main(line):
     """Translates the input file into a json output file.
 
     Args:
@@ -71,40 +71,39 @@ def main(input_file):
     """
     # Collect all requests into an array - one per line in the input file
     request_list = []
-    for line in input_file:
-        # The first value of a line is the image. The rest are features.
-        image_filename, features = line.lstrip().split(' ', 1)
+    # The first value of a line is the image. The rest are features,id
+    image_filename, features, id = line.lstrip().split(' ', 2)
 
-        # First, get the image data
-        '''
-        with open(image_filename, 'rb') as image_file:
-            content_json_obj = {
-                'content': base64.b64encode(image_file.read()).decode('UTF-8')
-            }'''
-
-        fd = urllib.urlopen(image_filename)
-        image_file = io.BytesIO(fd.read())
-        #im = Image.open(image_file)
+    # First, get the image data
+    '''
+    with open(image_filename, 'rb') as image_file:
         content_json_obj = {
             'content': base64.b64encode(image_file.read()).decode('UTF-8')
-        }
+        }'''
 
-        # Then parse out all the features we want to compute on this image
-        feature_json_obj = []
-        for word in features.split(' '):
-            feature, max_results = word.split(':', 1)
-            feature_json_obj.append({
-                'type': get_detection_type(feature),
-                'maxResults': int(max_results),
-            })
+    fd = urllib.urlopen(image_filename)
+    image_file = io.BytesIO(fd.read())
+    #im = Image.open(image_file)
+    content_json_obj = {
+        'content': base64.b64encode(image_file.read()).decode('UTF-8')
+    }
 
-        # Now add it to the request
-        request_list.append({
-            'features': feature_json_obj,
-            'image': content_json_obj,
+    # Then parse out all the features we want to compute on this image
+    feature_json_obj = []
+    for word in features.split(' '):
+        feature, max_results = word.split(':', 1)
+        feature_json_obj.append({
+            'type': get_detection_type(feature),
+            'maxResults': int(max_results),
         })
 
-    return json.dumps({'requests': request_list})
+    # Now add it to the request
+    request_list.append({
+        'features': feature_json_obj,
+        'image': content_json_obj,
+    })
+
+    return (json.dumps({'requests': request_list}),id)
 
 '''    
     # Write the object to a file, as json

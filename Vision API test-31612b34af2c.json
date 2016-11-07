@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vision-api-test-1258",
+  "private_key_id": "31612b34af2c33580a759100d4dcb59628fd8f41",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDWx4M/RooWGxm3\nyKP19jL3LeaS7Bg9fs9Oajqyh2JO8A2aGJF0fXBzbh7Ggh/Lfa/gqUuKuyvE5bWT\ng/8pIr2HASOd62JYYpaHmjUioKT3esoXO7yxrsulaBtxKWVnurbsiNPzJVcImZZ3\nmExopnnk2kyT5OsHjk+706SCAPzyQQZMq6jHckhweARq7BEaN88uxvJWB8GsWHGj\npMQ97qJc/GHO0lBTa441qPbbX2FG+GGTQg8KBv2udfIAoKoXqFb39qOBV4wR8o2S\nTu/Sh3PKZeN/F3eB870hZcbmgKbWW9OrKmapvkuUfkhwRp4HUKtBHOrQ5z+ROpc0\nchPzlKJzAgMBAAECggEALkE1cNEeN/iKJ1xcg0IMY9NMzuNtrQC8YKTcE0q4z0s/\ngqo72RyStSlIE3Q+qLJeyEFtdWkt2e+mlSheMVu7+XEzXHUu7t38kSOSwexa2rll\nAG/rCVEdpnevQUWrAxXhAzvMeZbXEZESKJtyCS+hHLout8MbIrtxTIAd86mG0Bzv\n3LESdkeMWYsxFlgL9nVsf8U20zG+/4H5Ianxr985x0HKlQm8vZjUypIrghLMRJVO\nE9e5x5sI8kfRToFFTGihcIK9NlNKt2zH/MzI3APlz2GntW5i2GoYgeRmA9/RVdqH\nPxcpRATAaHndjlNaJRz7M2YvNeg6z1jUyO7w+60IgQKBgQDuojXWrtOXZaAoidH7\nzidk05UEo42ZN4WboUEy9B8msxrRs/fYNTKUbyXzhTxx2rnXKBAomEwoMhM5HNEU\n6COQW+hwomkMmCs7lmnKyD17AhoUQ9RIY1A0wqb3VT2Dh23N3numaD7yRHQy3GyM\nMKgQZVIn20VH2+R4dFhS7jWnIQKBgQDmaOR6Wy+s7GEwRArXeT0pp4Znk8b8uJHR\nVhgynHeOaNiRwjBf+GT4srAHuLFikv6u0a2lA7CYFT0vG46B0e2B6xkDlXaox/Zq\nzetapERaKQ3Ui1uznxyIaBaQcTKAZgpDAQ7NsV9YfghOYeIdSxWSi2EUEjEsIoim\ndpw9i6DbEwKBgFJ1btEuPCNWlI8tgIfYZrhqfFXMBkPpcZujjxoCTTlcLmpEG+J0\nD3RHLAAIDCjzgcAdMeg1KCvDkezsTjtBM/jQKXOyS0Z01ouSoB/YLZZx1X0nKxWQ\na8ivcm6I3+axR3oZ5PRNlWK10Mk6ba/LqGdx+3+WP0xjaYFOAq81bQjBAoGBAJCO\nTJJLdWzbXNpoRhkL0oi4twVy3IwfzDR2/HV8XzH0q7M/DxSXBdpWWURu5rN+n9TU\nbkoyN3AjGyDb/BuMtqMk+aua8ThRRFOb38Yde1jJmwi3ahAWilM2Yrm6m0GdQ2Do\nX/5DAxvE7rcmiDNysRUg5wYtp7YV8H/nuHyQhpoLAoGAJgb/WktOwBY6X91DSGIA\n/auXsFZkhJ1s1DsoX70Tp0cF/g+xt7mcdK/EwUCU5nA3aAPb1HY0lKJSfKqNuWcs\nQAZsPCrQOtGhsAelUg6iKJ2zGB4XVPcsBWSYK/A8W75G6+Z7iAZjZ9HCKGqikX9k\n5lkQ8qW82DypiVb6SDvFufc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "vision-api-test-1258@appspot.gserviceaccount.com",
+  "client_id": "111119189838747237804",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision-api-test-1258%40appspot.gserviceaccount.com"
+}

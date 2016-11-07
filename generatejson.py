@@ -62,7 +62,7 @@ import io
 
 
 
-def main(line):
+def main(image_filename, features):
     """Translates the input file into a json output file.
 
     Args:
@@ -72,7 +72,6 @@ def main(line):
     # Collect all requests into an array - one per line in the input file
     request_list = []
     # The first value of a line is the image. The rest are features,id
-    image_filename, features, id = line.lstrip().split(' ', 2)
 
     # First, get the image data
     '''
@@ -80,6 +79,8 @@ def main(line):
         content_json_obj = {
             'content': base64.b64encode(image_file.read()).decode('UTF-8')
         }'''
+
+    print image_filename,features
 
     fd = urllib.urlopen(image_filename)
     image_file = io.BytesIO(fd.read())
